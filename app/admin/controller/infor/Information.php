@@ -8,6 +8,8 @@ use app\admin\traits\Curd;
 use EasyAdmin\annotation\ControllerAnnotation;
 use EasyAdmin\annotation\NodeAnotation;
 use think\App;
+use think\facade\Db;
+use think\facade\View;
 
 /**
  * @ControllerAnnotation(title="infor_information")
@@ -30,25 +32,29 @@ class Information extends AdminController
      */
     public function test()
     {
-        if ($this->request->isAjax()) {
-            list($page, $limit, $where) = $this->buildTableParames();
-            $count = $this->model
-                ->where($where)
-                ->count();
-            $list = $this->model
-                ->where($where)
-                ->page($page, $limit)
-                ->order($this->sort)
-                ->select();
-            $data = [
-                'code' => 0,
-                'msg' => '',
-                'count' => $count,
-                'data' => $list,
-            ];
-            return json($data);
-       }
-        return $this->fetch();
+//        if ($this->request->isAjax()) {
+//            list($page, $limit, $where) = $this->buildTableParames();
+//            $count = $this->model
+//                ->where($where)
+//                ->count();
+//            $list = $this->model
+//                ->where($where)
+//                ->page($page, $limit)
+//                ->order($this->sort)
+//                ->select();
+//            $data = [
+//                'code' => 0,
+//                'msg' => '',
+//                'count' => $count,
+//                'data' => $list,
+//            ];
+//            return json($data);
+//       }
+
+        $data=InforInformation::find(5);
+        return View::fetch('test',[
+            'data'=>$data
+        ]);
     }
     
 }

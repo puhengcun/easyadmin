@@ -10,6 +10,7 @@ use app\common\controller\AdminController;
 use EasyAdmin\annotation\ControllerAnnotation;
 use EasyAdmin\annotation\NodeAnotation;
 use think\App;
+use think\facade\View;
 
 /**
  * Class Admin
@@ -25,6 +26,21 @@ class Cate extends AdminController
     {
         parent::__construct($app);
         $this->model = new MallCate();
+    }
+
+    /**
+     * @NodeAnotation(title="测试信息")
+     */
+    public function information()
+    {
+        return $this->fetch();
+    }
+    /**
+     * @NodeAnotation(title="测试")
+     */
+    public function test()
+    {
+        return $this->fetch();
     }
 
 }

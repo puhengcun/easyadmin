@@ -12,6 +12,8 @@ define(["jquery", "easy-admin"], function ($, ea) {
         delete_url: 'mall.cate/delete',
         export_url: 'mall.cate/export',
         modify_url: 'mall.cate/modify',
+        test_url: 'mall.cate/test',
+        information_url: 'mall.cate/information',
     };
 
     var Controller = {
@@ -19,6 +21,36 @@ define(["jquery", "easy-admin"], function ($, ea) {
         index: function () {
             ea.table.render({
                 init: init,
+                toolbar: ['refresh',
+                    [{
+                        text: '添加',
+                        url: init.add_url,
+                        method: 'open',
+                        auth: 'add',
+                        class: 'layui-btn layui-btn-normal layui-btn-sm',
+                        icon: 'fa fa-plus ',
+                        extend: 'data-full="true"',
+                    }],
+                    'delete', 'export',
+                    [{
+                        text: '测试信息',
+                        url: init.information_url,
+                        method: 'open',
+                        auth: 'information',
+                        class: 'layui-btn layui-btn-normal layui-btn-sm',
+                        icon: 'fa fa-plus ',
+                        extend: 'data-full="true"',
+                    }],
+                    [{
+                        text: '测试',
+                        url: init.test_url,
+                        method: 'open',
+                        auth: 'test',
+                        class: 'layui-btn layui-btn-normal layui-btn-sm',
+                        icon: 'fa fa-plus ',
+                        extend: 'data-full="true"',
+                    }],
+                ],
                 cols: [[
                     {type: "checkbox"},
                     {field: 'id', width: 80, title: 'ID'},

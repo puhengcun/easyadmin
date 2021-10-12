@@ -82,6 +82,7 @@ class Goods extends AdminController
         return $this->fetch();
     }
 
+
     /**
      * @NodeAnotation(title="入库")
      */
