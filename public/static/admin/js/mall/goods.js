@@ -41,6 +41,15 @@ define(["jquery", "easy-admin"], function ($, ea) {
                         icon: 'fa fa-plus ',
                         extend: 'data-full="true"',
                     }],
+                    [{
+                        text: '测试2',
+                        url: init.test2_url,
+                        method: 'open',
+                        auth: 'test2',
+                        class: 'layui-btn layui-btn-normal layui-btn-sm',
+                        icon: 'fa fa-plus ',
+                        extend: 'data-full="true"',
+                    }],
                 ],
                 cols: [[
                     {type: "checkbox"},

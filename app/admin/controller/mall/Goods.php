@@ -4,6 +4,7 @@
 namespace app\admin\controller\mall;
 
 
+use app\admin\model\InforInformation;
 use app\admin\model\MallGoods;
 use app\admin\traits\Curd;
 use app\common\controller\AdminController;
@@ -63,21 +64,24 @@ class Goods extends AdminController
                 ->order($this->sort)
                 ->select();
             $data = [
-                'code'  => 0,
-                'msg'   => '',
+                'code' => 0,
+                'msg' => '',
                 'count' => $count,
-                'data'  => $list,
+                'data' => $list,
             ];
             return json($data);
         }
         return $this->fetch();
     }
+
     /**
      * @NodeAnotation(title="测试")
      */
-    public function test(){
+    public function test()
+    {
         return $this->fetch();
     }
+
     /**
      * @NodeAnotation(title="入库")
      */

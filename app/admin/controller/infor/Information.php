@@ -26,9 +26,9 @@ class Information extends AdminController
     }
 
     /**
-     * @NodeAnotation(title="列表")
+     * @NodeAnotation(title="测试")
      */
-    public function index()
+    public function test()
     {
         if ($this->request->isAjax()) {
             list($page, $limit, $where) = $this->buildTableParames();
@@ -47,7 +47,7 @@ class Information extends AdminController
                 'data' => $list,
             ];
             return json($data);
-        }
+       }
         return $this->fetch();
     }
     

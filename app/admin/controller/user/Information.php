@@ -5,6 +5,7 @@ namespace app\admin\controller\user;
 use app\common\controller\AdminController;
 use EasyAdmin\annotation\ControllerAnnotation;
 use EasyAdmin\annotation\NodeAnotation;
+use app\admin\model\UserInformation;
 use think\App;
 
 /**
@@ -19,9 +20,8 @@ class Information extends AdminController
     {
         parent::__construct($app);
 
-        $this->model = new \app\admin\model\UserInformation();
+        $this->model = new UserInformation();
         
     }
 
-    
 }

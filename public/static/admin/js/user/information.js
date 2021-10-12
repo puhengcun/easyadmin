@@ -25,7 +25,7 @@ define(["jquery", "easy-admin"], function ($, ea) {
                     {field: 'province', title: '省份'},
                     {field: 'university', title: '大学'},
                     {field: 'username', title: '用户名'},
-                    {field: 'password', title: '密码'},
+                    // {field: 'password', title: '密码'},
                     {width: 250, title: '操作', templet: ea.table.tool},
                 ]],
             });
